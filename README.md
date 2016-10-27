@@ -1,5 +1,5 @@
 # orhan's steamer website
-**Steamer website for streamers.**
+**Customuzable steamer website for streamers.**
 
 Usefull, simple and elegant interface.  
 Watch your live stream on your website.  
