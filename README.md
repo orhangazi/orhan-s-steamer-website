@@ -11,7 +11,7 @@ Add your sponsors and biography
 Add your social networks
 
 ##How to use
-It is very easy and full consists of 2 steps to complete.
+It is very easy and full consists of 2 steps to complete.  
 1. [Download](https://github.com/orhangazi/orhan-s-steamer-website/archive/master.zip) and edit **configure.php** file. You must define a user name and a password for login in. It is very easy like this:  
  
 ```
