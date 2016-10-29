@@ -71,6 +71,17 @@ a{
     -webkit-transition:all .2s ease-in-out;
 }
 
+.footer{
+    background-color: black;
+    color: white;
+    margin:0;
+    padding:30px;
+}
+
+.footer>a{
+    text-decoration: underline;
+}
+
 .nav-logo{
     height: 60px;
     float: left;
@@ -102,7 +113,7 @@ a{
 }
 
 .weakly-calendar-container{
-    height: 250px;
+    height: 100px;
 }
 
 .biography{

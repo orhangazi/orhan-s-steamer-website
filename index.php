@@ -90,7 +90,7 @@ $sponsors = $info_array['sponsors'];//array
 		</div>
 	</div>-->
 </div>
-<footer class="footer"></footer>
+<footer class="footer">Developed by <a href="http://orhangazi.info">Orhan Gazi Kılıç</a> (Licance: <a href="http://www.gnu.org/licenses/gpl-3.0.txt">GNU GENERAL PUBLIC LICENSE</a>)</footer>
 <script src="js/jquery3.1.min.js"></script>
 <script src="js/flipclock.min.js"></script>
 <script src="js/animatescroll.js"></script>
