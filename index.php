@@ -28,6 +28,9 @@ $stream_date_year = $stream_time[2];
 $stream_date_clock = $stream_time[3];
 $stream_date_minutes = $stream_time[4];
 
+$twitter = $info_array["social_networks"][0]["twitter"]['url'];
+$youtube = $info_array["social_networks"][1]["youtube"]['url'];
+
 $sponsors = $info_array['sponsors'];//array
 ?>
 <!doctype html>
@@ -52,9 +55,15 @@ $sponsors = $info_array['sponsors'];//array
 	<ul class="nav-menu right">
 		<li><a class="nav-menu-item" href="<?= $latest_streams ?>">Latest Streams</a></li>
 		<li><a onclick="$('.biography-container').animatescroll({scrollSpeed:1500,easing:'easeOutElastic'});" class="nav-menu-item">Biyography</a></li>
-		<li><a class="nav-menu-item">Vote</a></li>
-		<li><a class="nav-menu-item">Weekly Calendar</a></li>
-		<li><a onclick="$('.channel-live-video-container').animatescroll({scrollSpeed:1500,easing:'easeOutElastic'});" class="nav-menu-item">Watch Stream</a></li>
+		<!--<li><a class="nav-menu-item">Vote</a></li>
+		<li><a class="nav-menu-item">Weekly Calendar</a></li>-->
+		<li><a href="<?= $channel_url ?>" class="nav-menu-item">Watch Stream</a></li>
+		<div class="nav-menu-social">
+			<ul>
+				<li><a href="<?= $twitter ?>" class="nav-menu-social-item">Twitter</a></li>
+				<li><a href="<?= $youtube ?>" class="nav-menu-social-item">Youtube</a></li>
+			</ul>
+		</div>
 	</ul>
 </nav>
 <div class="container">
@@ -62,10 +71,13 @@ $sponsors = $info_array['sponsors'];//array
 	<div class="biography-container">
 		<div class="biography">
 			<div class="resim"><img src="<?= $image ?>" alt=""></div>
-			<div class="biography-text"><h1><?= "$channel_name ($name)" ?></h1></div>
+			<div class="biography-text">
+				<h1 class="biography-text-title"><?= "$channel_name ($name)" ?></h1>
+				<p><?= $biography ?></p>
+			</div>
 			<div class="info">
-				<span class="phone">E-mail: <?= $email ?></span>
-				<span class="phone">Phone: <?= $phone ?></span>
+				<p class="email">E-mail: <?= $email ?></p>
+				<p class="phone">Phone: <?= $phone ?></p>
 			</div>
 		</div>
 	</div>
@@ -80,7 +92,6 @@ $sponsors = $info_array['sponsors'];//array
 </div>
 <footer class="footer"></footer>
 <script src="js/jquery3.1.min.js"></script>
-<script src="js/script.js"></script>
 <script src="js/flipclock.min.js"></script>
 <script src="js/animatescroll.js"></script>
 <!--<script src= "http://player.twitch.tv/js/embed/v1.js"></script>-->

@@ -9,18 +9,17 @@
 include "configure.php";
 
 if (isset($_GET['logout'])){
-	session_destroy();
 	session_unset();
+	session_destroy();
+
 	$oturum = false;
 }
 
-if($_SESSION['user-name']!=""){
-	$oturum = true;
+if($_SESSION['user_name']=="" || $_SESSION['user_name']=="NULL"){
+	$oturum = false;
 }else{
-	$oturum = false;
+	$oturum = true;
 }
-
-var_dump($_SESSION['user-name']);
 
 if(isset($_POST['loginin'])) {
 	$user_name = $_POST['user-name'];
@@ -54,6 +53,8 @@ if(isset($_POST['save'])){
 	$info_json->biography = trim($_POST["biography"]);
 	$info_json->phone = trim($_POST["phone"]);
 	$info_json->email = trim($_POST["email"]);
+	$info_json->social_networks[0]->twitter->url = trim($_POST["twitter-url"]);
+	$info_json->social_networks[1]->youtube->url = trim($_POST["youtube-url"]);
 
 	$info_json = json_encode($info_json);
 	$write = fwrite($info_json_file,$info_json);
@@ -81,6 +82,8 @@ if($oturum){
 	$biography = $info["biography"];
 	$phone = $info["phone"];
 	$email = $info["email"];
+	$twitter = $info["social_networks"][0]["twitter"]['url'];
+	$youtube = $info["social_networks"][1]["youtube"]['url'];
 }
 
 ?>
@@ -115,7 +118,7 @@ if($oturum){
 		else {
 			echo "<div class='container-login'>
 		<form action='' method='post'>
-			<h2 class='login-title'>SETTİNGS</h2><h3 class='login-title-logout'><a href='?logout=true'>Logout</a></h3><div class='clearfix'></div>
+			<h2 class='login-title'>SETTİNGS</h2><h3 class='login-title-logout'><a href='?logout=true'>Logout</a></h3><h3 class='login-title-logout'><a href='index.php'>Main page</a></h3><div class='clearfix'></div>
 			<div class='channel-settings'>
 				<h3>Channel Settings</h3>
 				<span>Channel name:</span>
@@ -128,17 +131,20 @@ if($oturum){
 				<input type='text' name='channel-background' class='form-control channel-settings-item' placeholder='With http://' value='$background_image_url'>
 				<div class='stream-date'>
 					<h4>Stream Date:</h4>
-					<input type='text' name='stream-date' class='form-control' id='stream-date' placeholder='Stream Date' value='$stream_date'>
+					<input type='text' name='stream-date' class='form-control channel-settings-item' id='stream-date' placeholder='Stream Date' value='$stream_date'>
 				</div>
 				<div class='stream-time'>
 					<h4>Stream Time:</h4>
 					<div class='input-group clockpicker' data-placement='top' data-align='top' data-autoclose='true'>
-						<input type='text' class='form-control' id='stream-time' name='stream-time' value='$stream_time'>
+						<input type='text' class='form-control channel-settings-item' id='stream-time' name='stream-time' value='$stream_time'>
 						<span class='input-group-addon'>
 						<span class='glyphicon glyphicon-time'></span>
 					</span>
 					</div>
 				</div>
+				<div class='clearfix'></div>
+				<span>Youtube:</span>
+				<input type='text' name='youtube-url' class='form-control channel-settings-item' placeholder='With http://' value='$youtube'>
 			</div>
 			<div class='biography-settings'>
 				<h3>Streamer's Biography Settings</h3>
@@ -152,6 +158,8 @@ if($oturum){
 				<input type='text' name='phone' class='form-control channel-settings-item' placeholder='Phone' value='$phone'>
 				<span>E-mail:</span>
 				<input type='email' name='email' class='form-control channel-settings-item' placeholder='Email' value='$email'>
+				<span>Twitter:</span>
+				<input type='text' name='twitter-url' class='form-control channel-settings-item' placeholder='With http://' value='$twitter'>
 			</div>
 			<button class='btn btn-success btn-block' name='save' value='true'>SAVE</button>
 			<span class='text-center'>$message</span>
