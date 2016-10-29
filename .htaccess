@@ -1,0 +1,13 @@
+# daha.net
+# .htaccess ile ana siteyi farkli bir alt klasore yonlendirme.
+# lutfen altklasor yazan kýsýmlarý yonlendirmek istediginiz klasor ile,
+
+# ve domain.com olanlari domaininiz ile degistiriniz.
+# ve duzenlemelerden sonra bu kodlari .htaccess adi altinda ana klasorunuze atiniz.
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+
+#RewriteRule ^(.+)$ /oyunsepeti.com/index.php [L,NC]
+RewriteRule ^login$ /orhan-s-steamer-website/login.php [L,NC]

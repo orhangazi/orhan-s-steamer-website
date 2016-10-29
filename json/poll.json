@@ -1,0 +1,46 @@
+{
+  "poll": [
+    [
+      {
+        "name": "oyun1",
+        "total_votes": 100
+      },
+      {
+        "name": "oyun2",
+        "total_votes": 110
+      },
+      {
+        "name": "oyun3",
+        "total_votes": 110
+      }
+    ],
+    [
+      {
+        "name": "oyun4",
+        "total_votes": 100
+      },
+      {
+        "name": "oyun5",
+        "total_votes": 110
+      },
+      {
+        "name": "oyun6",
+        "total_votes": 110
+      }
+    ],
+    [
+      {
+        "name": "oyun7",
+        "total_votes": 100
+      },
+      {
+        "name": "oyun7",
+        "total_votes": 110
+      },
+      {
+        "name": "oyun8",
+        "total_votes": 110
+      }
+    ]
+  ]
+}
