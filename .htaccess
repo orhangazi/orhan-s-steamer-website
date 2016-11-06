@@ -10,4 +10,4 @@ RewriteEngine on
 RewriteBase /
 
 #RewriteRule ^(.+)$ /oyunsepeti.com/index.php [L,NC]
-RewriteRule ^login$ /orhan-s-steamer-website/login.php [L,NC]
+RewriteRule ^login$ /login.php [L,NC]

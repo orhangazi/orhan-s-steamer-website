@@ -54,7 +54,11 @@ if(isset($_POST['save'])){
 	$info_json->phone = trim($_POST["phone"]);
 	$info_json->email = trim($_POST["email"]);
 	$info_json->social_networks[0]->twitter->url = trim($_POST["twitter-url"]);
+	$info_json->social_networks[0]->twitter->logo = trim($_POST["twitter-logo"]);
 	$info_json->social_networks[1]->youtube->url = trim($_POST["youtube-url"]);
+	$info_json->social_networks[1]->youtube->logo = trim($_POST["youtube-logo"]);
+	$info_json->social_networks[2]->twitch->url = trim($_POST["twitch-url"]);
+	$info_json->social_networks[2]->twitch->logo = trim($_POST["twitch-logo"]);
 
 	$info_json = json_encode($info_json);
 	$write = fwrite($info_json_file,$info_json);
@@ -83,7 +87,11 @@ if($oturum){
 	$phone = $info["phone"];
 	$email = $info["email"];
 	$twitter = $info["social_networks"][0]["twitter"]['url'];
+	$twitter_logo = $info["social_networks"][0]["twitter"]['logo'];
+	$youtube_logo = $info["social_networks"][1]["youtube"]['logo'];
 	$youtube = $info["social_networks"][1]["youtube"]['url'];
+	$twitch_logo = $info["social_networks"][2]["twitch"]['logo'];
+	$twitch = $info["social_networks"][2]["twitch"]['url'];
 }
 
 ?>
@@ -145,6 +153,12 @@ if($oturum){
 				<div class='clearfix'></div>
 				<span>Youtube:</span>
 				<input type='text' name='youtube-url' class='form-control channel-settings-item' placeholder='With http://' value='$youtube'>
+				<span>Youtube logo:</span>
+				<input type='text' name='youtube-logo' class='form-control channel-settings-item' placeholder='With http://' value='$youtube_logo'>
+				<span>Twitch:</span>
+				<input type='text' name='twitch-url' class='form-control channel-settings-item' placeholder='With http://' value='$twitch'>
+				<span>Twitch logo:</span>
+				<input type='text' name='twitch-logo' class='form-control channel-settings-item' placeholder='With http://' value='$twitch_logo'>
 			</div>
 			<div class='biography-settings'>
 				<h3>Streamer's Biography Settings</h3>
@@ -160,6 +174,8 @@ if($oturum){
 				<input type='email' name='email' class='form-control channel-settings-item' placeholder='Email' value='$email'>
 				<span>Twitter:</span>
 				<input type='text' name='twitter-url' class='form-control channel-settings-item' placeholder='With http://' value='$twitter'>
+				<span>Twitter logo:</span>
+				<input type='text' name='twitter-logo' class='form-control channel-settings-item' placeholder='With http://' value='$twitter_logo'>
 			</div>
 			<button class='btn btn-success btn-block' name='save' value='true'>SAVE</button>
 			<span class='text-center'>$message</span>

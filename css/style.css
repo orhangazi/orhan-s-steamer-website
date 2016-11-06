@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+
 body{
     margin: 0;
     padding: 0;
@@ -103,13 +105,19 @@ a{
 }
 
 .countdowner{
-    width: 762px !important;
-    margin: 0 auto !important;
-    top:200px;
+    /*width: 642px !important;
+    margin: 0 auto !important;*/
+    height: 205px;
 }
 
 .biography-container,.countdowner-container,.channel-live-video-container,.weakly-calendar-container {
     height: 100vh;
+}
+
+.countdowner-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .weakly-calendar-container{
@@ -182,18 +190,19 @@ a{
     padding: 0 15px 0 15px;;
 }
 
-.nav-menu>li:hover{
+/*.nav-menu>li:hover{
     background-color: rgba(255,255,255,1);
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-}
+}*/
 
 .nav-menu-item{
     font-size: 25px;
-    padding: 32px 0 31px 0;
+    padding: 18px 0 15px 0;
+    margin: auto;
 }
 
 .right{
@@ -202,4 +211,39 @@ a{
 
 .left{
     float: left;
+}
+
+.countdowner>div {
+  display: inline-block;
+  margin: 0 5px 1em;
+  font-size: 150px;
+  font-weight: 100;
+  line-height: 1 !important;
+  text-align: right;
+  margin-left:40px;
+  color: ;
+  /* IE7 inline-block hack */
+  *display: inline;
+  *zoom: 1;
+  font:150px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#777;
+  font-weight:300;
+}
+
+.countdowner>div:first-child {
+  margin-left: 0;
+}
+
+.countdowner>div:last-child {
+  margin-right: 0;
+}
+
+.countdowner>div>span {
+  display: block;
+  border-top: 1px solid #777;
+  padding-top: 3px;
+  font-size: 40px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: left;
 }
