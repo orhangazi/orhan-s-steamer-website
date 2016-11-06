@@ -1,4 +1,4 @@
-# orhan's steamer website
+# orhan's streamer website
 **Customuzable steamer website for streamers.**
 
 Usefull, simple and elegant interface 
