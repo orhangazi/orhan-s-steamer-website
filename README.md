@@ -1,5 +1,5 @@
 # orhan's streamer website
-**Customuzable steamer website for streamers.**
+**Customuzable streamer website for streamers.**
 
 Usefull, simple and elegant interface 
 No need database  
