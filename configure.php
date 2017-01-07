@@ -6,5 +6,5 @@
  * Time: 17:43
  */
 session_start();
-$user_name_config = "erenimo";
-$password_config = "11906512";
+$user_name_config = "orhangazi";
+$password_config = "1234";
